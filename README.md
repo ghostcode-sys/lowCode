@@ -20,6 +20,14 @@ The focus here is not just on "making it work," but on Object-Oriented Analysis 
 - **Encapsulation**: Protecting data by keeping fields private and using getters/setters.
 - **Abstraction**: Using Interfaces and Abstract classes to decouple the system.
 
+# 📚 Problem Sets
+Sno. | Category	| System Design |	Status 	
+---- | -------- | ------------- | ------ 
+1 | **Management** | [FileSystem](fileSystem/readme.md) | ✅ Done 
+2 | **Game** | [TicTacToe](ticTacToe/readme.md) |  ✅ Done
+3 | **Game** | [CricBuzz]() | 🏗️ WIP
+
+
 # 🎨 How to Use This Repo
 - **Start with the Requirements**: Every folder has a README.md explaining the "Why" and "What."
 - **Analyze the UML**: Before looking at the code, understand the relationship between classes ($Is-A$ vs $Has-A$).
