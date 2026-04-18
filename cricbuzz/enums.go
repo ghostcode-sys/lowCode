@@ -30,7 +30,7 @@ type DominateSide uint8
 
 const (
 	RIGHTHANDY DominateSide = iota
-	LEFTHANDY 
+	LEFTHANDY
 )
 
 type BowlingType uint8
@@ -41,7 +41,7 @@ const (
 	FAST
 )
 
-type Extras uint8 
+type Extras uint8
 
 const (
 	NO_BALL Extras = iota
@@ -49,4 +49,29 @@ const (
 	BYE
 	LEG_BYE
 	PENALTY_RUN
+)
+
+type WicketType uint8
+
+const (
+	BOWLED WicketType = iota
+	CAUGHT
+	LEG_BEFORE_WICKET
+	RUN_OUT
+	STUMPED
+	HIT_WICKET
+)
+
+type TossType uint8
+
+const (
+	HEAD TossType = iota
+	TAIL
+)
+
+type TossDecisionType uint8
+
+const (
+	BAT TossDecisionType = iota
+	BOWL
 )
