@@ -1,4 +1,4 @@
-package cricbuzz
+package service
 
 type wicket struct {
 	wicketType WicketType
@@ -7,6 +7,7 @@ type wicket struct {
 	runoutBy   player
 	caughtBy   player
 }
+
 
 func NewWicket(wicketType WicketType, batsmanOut player) *wicket {
 	return &wicket{
@@ -45,7 +46,7 @@ func (w *wicket) GetWicketType() string {
 	}
 }
 
-func (w *wicket) GetBatsmanOut() string {
+func (w *wicket) GetDismissedPlayer() string {
 	return w.batsmanOut.GetPlayerName()
 }
 

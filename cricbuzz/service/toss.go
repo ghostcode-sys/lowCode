@@ -1,4 +1,4 @@
-package cricbuzz
+package service
 
 type toss struct {
 	tossWinner   team

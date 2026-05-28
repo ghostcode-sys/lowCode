@@ -1,4 +1,4 @@
-package cricbuzz
+package service
 
 type team struct {
 	teamid       int
