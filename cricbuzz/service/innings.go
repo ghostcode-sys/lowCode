@@ -1,4 +1,4 @@
-package cricbuzz
+package service
 
 type innings struct {
 	inningsNumber int
@@ -8,6 +8,7 @@ type innings struct {
 	totalWickets  int
 	overPlayed    int
 	overs         []*over
+	scoreCard     *scoreCard
 }
 
 func NewInnings(inningsNumber int, battingTeam *team, bowlingTeam *team) *innings {
@@ -17,6 +18,11 @@ func NewInnings(inningsNumber int, battingTeam *team, bowlingTeam *team) *inning
 		bowlingTeam:   bowlingTeam,
 		overs:         make([]*over, 0),
 	}
+}
+
+func (i *innings) SetScoreCard(scoreCard *scoreCard) *innings {
+	i.scoreCard = scoreCard
+	return i
 }
 
 func (i *innings) AddOver(over *over) *innings {
@@ -29,6 +35,10 @@ func (i *innings) AddOver(over *over) *innings {
 
 func (i *innings) GetInningsNumber() int {
 	return i.inningsNumber
+}
+
+func (i *innings) GetScoreCard() *scoreCard {
+	return i.scoreCard
 }
 
 func (i *innings) GetBattingTeam() string {

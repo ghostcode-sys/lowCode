@@ -1,4 +1,4 @@
-package cricbuzz
+package service
 
 type player struct {
 	playerId     string
@@ -6,11 +6,14 @@ type player struct {
 	playerRole   PlayerRole
 	battingStyle DominateSide
 	bowlingStyle BowlingStyle
+	country      string
 }
+
+
 
 type BowlingStyle struct {
 	dominateSide DominateSide
-	bowlingType  BowlingType
+	bowlingType  string
 }
 
 func NewPlayer(name string, id string) *player {
@@ -30,9 +33,14 @@ func (p *player) SetBattingStyle(style DominateSide) *player {
 	return p
 }
 
-func (p *player) SetBowlingStyle(bowlStyle BowlingType, dominatehand DominateSide) *player {
+func (p *player) SetBowlingStyle(bowlStyle string, dominatehand DominateSide) *player {
 	p.bowlingStyle.dominateSide = dominatehand
 	p.bowlingStyle.bowlingType = bowlStyle
+	return p
+}
+
+func (p *player) SetCountry(country string) *player {
+	p.country = country
 	return p
 }
 
@@ -66,6 +74,10 @@ func (p *player) GetBattingStyle() string {
 	}
 }
 
+func (p *player) GetPlayerID() string {
+	return p.playerId
+}
+
 func (p *player) GetBowlingStyle() string {
 	s := ""
 	switch p.bowlingStyle.dominateSide {
@@ -76,15 +88,11 @@ func (p *player) GetBowlingStyle() string {
 	default:
 		return ""
 	}
-	switch p.bowlingStyle.bowlingType {
-	case FAST:
-		s += " fast pacer"
-	case MEDIUM:
-		s += " medium pacer"
-	case SPIN:
-		s += " spinner"
-	default:
-		return ""
-	}
+	s += " " + p.bowlingStyle.bowlingType
 	return s
+}
+
+
+func (p *player) GetCountry() string {
+	return p.country
 }
